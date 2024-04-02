@@ -68,7 +68,7 @@ const SingleBlog = () => {
   const blog_id = pathname.split("/")[2];
   const [blog, setBlog] = useState({});
   const { currentUser } = useSelector((state) => state.user);
-  const PF = "http://localhost:3000/images/";
+  const PF = "https://blogplus-backend.onrender.com/images/";
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -78,7 +78,7 @@ const SingleBlog = () => {
   //fetching Blog.
   useEffect(() => {
     const getBlog = async () => {
-      const res = await axios.get(`http://localhost:3000/api/blog/${blog_id}`);
+      const res = await axios.get(`https://blogplus-backend.onrender.com/api/blog/${blog_id}`);
       setBlog(res.data);
       setTitle(res.data.title);
       setDescription(res.data.description);
@@ -92,7 +92,7 @@ const SingleBlog = () => {
     e.preventDefault();
     try {
       const res = await axios.delete(
-        `http://localhost:3000/api/blog/${blog_id}`
+        `https://blogplus-backend.onrender.com/api/blog/${blog_id}`
       );
       console.log(res.data);
       navigate("/");
@@ -106,7 +106,7 @@ const SingleBlog = () => {
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:3000/api/blog/${blog._id}`,
+        `https://blogplus-backend.onrender.com/api/blog/${blog._id}`,
         { username: currentUser.username, title, description }
       );
       console.log(res.data);

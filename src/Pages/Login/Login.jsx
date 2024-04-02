@@ -27,7 +27,7 @@ export default function Login() {
         return;
       }
       dispatch(loginStart());
-      const res = await axios.post('http://localhost:3000/api/auth/login',{username,password});
+      const res = await axios.post('https://blogplus-backend.onrender.com/api/auth/login',{username,password});
       dispatch(loginSuccess(res.data));
       console.log(res.data);
       navigate('/');

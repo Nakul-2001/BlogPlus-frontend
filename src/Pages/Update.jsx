@@ -121,19 +121,19 @@ const Update = () => {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post(`http://localhost:3000/api/upload`, data);
+        await axios.post(`https://blogplus-backend.onrender.com/api/upload`, data);
       } catch (err) {console.log('upload',err)}
     }
 
     try {
-      const res = await axios.put(`http://localhost:3000/api/user/${currentUser._id}`, updatedUser);
+      const res = await axios.put(`https://blogplus-backend.onrender.com/api/user/${currentUser._id}`, updatedUser);
       console.log(res.data);
       dispatch(loginSuccess(res.data));
       toast.success("User has been updated successfully");
     } catch (err) {console.log('post',err)}
   };
 
-  const PF = 'http://localhost:3000/images/';
+  const PF = 'https://blogplus-backend.onrender.com/images/';
 
   return (
     <>

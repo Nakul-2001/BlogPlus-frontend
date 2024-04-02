@@ -24,7 +24,7 @@ export default function Register() {
         toast.error('Password should at least have 8 characters');
         return;
       };
-      const res = await axios.post('http://localhost:3000/api/auth/register',{username,fullname,password});
+      const res = await axios.post('https://blogplus-backend.onrender.com/api/auth/register',{username,fullname,password});
       navigate('/login');
     } catch (error) {
       setError(true);

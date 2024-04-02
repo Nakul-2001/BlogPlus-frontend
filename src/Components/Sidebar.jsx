@@ -63,7 +63,7 @@ const Sidebar = () => {
 
   useEffect(()=>{
     const getCategories = async () => {
-      const res = await axios.get('http://localhost:3000/api/category');
+      const res = await axios.get('https://blogplus-backend.onrender.com/api/category');
       setCategories(res.data);
       console.log(res.data);
     }

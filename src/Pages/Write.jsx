@@ -95,12 +95,12 @@ const Write = () => {
       data.append("file", file);
       newBlog.photo = filename;
       try {
-        await axios.post(`http://localhost:3000/api/upload`, data);
+        await axios.post(`https://blogplus-backend.onrender.com/api/upload`, data);
       } catch (err) {console.log('upload',err)}
     }
 
     try {
-      const res = await axios.post(`http://localhost:3000/api/blog`, newBlog);
+      const res = await axios.post(`https://blogplus-backend.onrender.com/api/blog`, newBlog);
       navigate(`/blog/${res.data._id}`);
     } catch (err) {console.log('post',err)}
   };

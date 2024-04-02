@@ -51,7 +51,7 @@ const Desc = styled.div`
 
 
 const Blog = ({blog}) => {
-  const PF = 'http://localhost:3000/images/';
+  const PF = 'https://blogplus-backend.onrender.com/images/';
   return (
     <Container>
       <Photo src={PF+blog.photo} alt='img not found'></Photo>

@@ -16,7 +16,7 @@ const Body = () => {
 
   useEffect(()=>{
     const getBlogs = async () => {
-      const res = await axios.get(`http://localhost:3000/api/blog/${search}`);
+      const res = await axios.get(`https://blogplus-backend.onrender.com/api/blog/${search}`);
       setBlogs(res.data);
       console.log(res);
     }
