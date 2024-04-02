@@ -13,7 +13,6 @@ export default function Login() {
   const [error,setError] = useState(false);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +29,6 @@ export default function Login() {
       const res = await axios.post('https://blogplus-backend.onrender.com/api/auth/login',{username,password});
       dispatch(loginSuccess(res.data));
       console.log(res.data);
-      navigate('/');
       
     } catch (error) {
       console.log(error);
