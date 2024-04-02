@@ -8,6 +8,7 @@ import Update from './Pages/Update'
 import Blog from './Pages/Blog'
 import {Toaster} from 'react-hot-toast'
 import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 function App() {
   
