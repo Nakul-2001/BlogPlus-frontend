@@ -95,8 +95,6 @@ const Navbar = () => {
     dispatch(loginSuccess(null));
   }
 
-  const PF = 'https://blogplus-backend.onrender.com/images/';
-
   return (
     <Container>
       <Left>
@@ -112,7 +110,7 @@ const Navbar = () => {
 
       {currentUser ? (
         <Right>
-          <Link to='update'><Profile src={PF+currentUser.profilePic}></Profile></Link>
+          <Link to='update'><Profile src={currentUser.profilePic}></Profile></Link>
           <Logout onClick={(e)=>handleClick(e)}><MdLogout /></Logout>
         </Right>
       ) : (
