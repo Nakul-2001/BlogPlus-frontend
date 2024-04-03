@@ -51,10 +51,9 @@ const Desc = styled.div`
 
 
 const Blog = ({blog}) => {
-  const PF = 'https://blogplus-backend.onrender.com/images/';
   return (
     <Container>
-      <Photo src={PF+blog.photo} alt='img not found'></Photo>
+      <Photo src={blog.photo} alt='img not found'></Photo>
       <Categories>{blog.category.map((c)=>(
         c+' '
       ))}</Categories>
