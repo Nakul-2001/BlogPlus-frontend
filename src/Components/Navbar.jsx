@@ -105,12 +105,12 @@ const Navbar = () => {
         <Options><Link to='/'>Home</Link></Options>
         <Options><a href='https://github.com/Nakul-2001' target="blank">About</a ></Options>
         <Options><Link >Contact Us</Link></Options>
-        {currentUser && <Options><Link to='Write'>Write</Link></Options>}
+        {currentUser && <Options><Link to='/Write'>Write</Link></Options>}
       </Center>
 
       {currentUser ? (
         <Right>
-          <Link to='update'><Profile src={currentUser.profilePic}></Profile></Link>
+          <Link to='/update'><Profile src={currentUser.profilePic}></Profile></Link>
           <Logout onClick={(e)=>handleClick(e)}><MdLogout /></Logout>
         </Right>
       ) : (
