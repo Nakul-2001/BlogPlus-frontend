@@ -68,7 +68,6 @@ const SingleBlog = () => {
   const blog_id = pathname.split("/")[2];
   const [blog, setBlog] = useState({});
   const { currentUser } = useSelector((state) => state.user);
-  const PF = "https://blogplus-backend.onrender.com/images/";
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -122,7 +121,7 @@ const SingleBlog = () => {
         src={
           !blog.photo
             ? "https://images.pexels.com/photos/6685428/pexels-photo-6685428.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-            : PF + blog.photo
+            : blog.photo
         }
       ></Image>
       {!updatemode ? (

@@ -93,9 +93,9 @@ const Write = () => {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      newBlog.photo = filename;
       try {
-        await axios.post(`https://blogplus-backend.onrender.com/api/upload`, data);
+        const res = await axios.post(`https://blogplus-backend.onrender.com/api/upload`, data);
+        newBlog.photo = res.data;
       } catch (err) {console.log('upload',err)}
     }
 

@@ -100,7 +100,6 @@ const Update = () => {
   const [password, setPassword] = useState("");
   const [file, setFile] = useState(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
@@ -119,9 +118,10 @@ const Update = () => {
       const filename = Date.now() + file.name;
       data.append("name", filename);
       data.append("file", file);
-      updatedUser.profilePic = filename;
+      
       try {
-        await axios.post(`https://blogplus-backend.onrender.com/api/upload`, data);
+        const res = await axios.post(`https://blogplus-backend.onrender.com/api/upload`, data);
+        updatedUser.profilePic = res.data;
       } catch (err) {console.log('upload',err)}
     }
 
@@ -132,8 +132,6 @@ const Update = () => {
       toast.success("User has been updated successfully");
     } catch (err) {console.log('post',err)}
   };
-
-  const PF = 'https://blogplus-backend.onrender.com/images/';
 
   return (
     <>
@@ -146,7 +144,7 @@ const Update = () => {
         </Heading>
         <label htmlFor='img' style={{fontSize:'4vmin'}}>Profile Picture</label>
         <Profile>   
-            <Image id='img' src={file ? URL.createObjectURL(file) : PF+currentUser.profilePic}></Image>
+            <Image id='img' src={file ? URL.createObjectURL(file) : currentUser.profilePic}></Image>
             <label htmlFor='icon'><Icon><FaRegCircleUser /></Icon></label>
             <input type='file' id='icon' style={{display:'none'}} onChange={(e)=>setFile(e.target.files[0])}></input>
         </Profile>
