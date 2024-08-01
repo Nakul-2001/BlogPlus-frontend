@@ -74,7 +74,8 @@ const Sidebar = () => {
     <Container>
       <Heading>ABOUT ME</Heading>
       <Photo src='https://img.freepik.com/free-photo/oh-hello-nice-meet-you-portrait-surprised-african-american-man-greet-friend-didnt-expect-see-person_176420-33825.jpg?w=996&t=st=1711798664~exp=1711799264~hmac=28a03d1c5ef20e9a0dee384b794bfa85543963c74d94a04acb17967aaad5b6b7'></Photo>
-      <Desc>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium doloremque consequuntur est porro quae ducimus quod nobis aliquid? Aspernatur, ut
+      <Desc>Hi, I am a 4th-year student currently pursuing Electrical Engineering at Netaji Subhas University of Technology (formerly NSIT). 
+      <p>I am a coding enthusiast with strong knowledge of Data Structures and Algorithms, OOPs, OS, DBMS, skilled in C/C++, and proficient in HTML, CSS, React, JavaScript, Node.js, Express.js, and MongoDB.</p>
       </Desc>
       <Heading>CATEGORIES</Heading>
       <Options>

@@ -98,7 +98,7 @@ const Navbar = () => {
   return (
     <Container>
       <Left>
-        <Logo>Blog App</Logo>
+        <Logo>BlogPlus</Logo>
       </Left>
 
       <Center>
